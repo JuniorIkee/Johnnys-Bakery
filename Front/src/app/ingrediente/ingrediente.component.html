@@ -1,0 +1,115 @@
+
+<div class="titulo">
+    <img src="../../../assets/img/ingredient.png" alt="">
+    <h3>Ingredientes</h3>
+</div>
+
+<div class="card-row">
+    <div class="card resumo">
+        <div class="titulo-resumo">
+            <span class="titulo-resumo-valor">10</span>
+            <span>Cadastrados</span>
+        </div>
+    </div>
+
+    <div class="card resumo">
+        <div class="titulo-resumo">
+            <span class="titulo-resumo-valor">10</span>
+            <span>Em estoque</span>
+        </div>
+    </div>
+
+    <div class="card resumo">
+        <div class="titulo-resumo">
+            <span class="titulo-resumo-valor">10</span>
+            <span>Dias até o vencimento</span>
+        </div>
+    </div>
+</div>
+
+<div class="card-row">
+    <div class="card">
+        <div class="row pesquisa">
+            <div class="col-12 barra-pesquisa">
+                <input type="email" class="form-control form-control-sm espacamento-pesquisa" id="busca" placeholder="Nome..." [(ngModel)]="filtroNome">
+                <button class="btn btn-light" (click)="Listar()">Buscar</button>
+            </div>
+        </div>
+        <div class="row tabela-listagem">
+            <table>
+                <thead>
+                    <th style="width: 90%;">Nome</th>
+                    <th></th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of listaIngredientes">
+                        <td>{{item.Nome}}</td>
+                        <td><button class="btn btn-sm btn-light" (click)="Carregar(item.IdEnc)">Detalhe</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="titulo-cadastro">
+            <h4>Ingrediente <span *ngIf="ingrediente.Id">#{{ingrediente.Id}}</span></h4>
+            <button class="btn btn-light">Expandir</button>
+        </div>
+        <form>
+            <div class="row">
+                <div class="col-12 h-item">
+                    <div class="form-group">
+                        <label>Nome</label>
+                        <input name="nome" type="text" class="form-control form-control-sm" [(ngModel)]="ingrediente.Nome">
+                    </div>
+                </div>
+                <div class="col-6 h-item">
+                    <div class="form-group">
+                        <label>Estoque mínimo</label>
+                        <input type="text" name="estoque_minimo"  class="form-control form-control-sm" [(ngModel)]="ingrediente.EstoqueMinimo">
+                    </div>
+                </div>
+                <div class="col-6 h-item-check">
+                    <div class="form-group">
+                        <label>Margem lucro</label>
+                        <input type="text" name="margem_lucro" class="form-control form-control-sm" [(ngModel)]="ingrediente.MargemLucro">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label>Custo mais recente</label>
+                        <input type="text" name="custo_recente" class="form-control form-control-sm" readonly [(ngModel)]="ingrediente.CustoRecente">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-check h-item-check h-item">
+                        <input name="ativo" type="checkbox" class="form-check-input" [(ngModel)]="ingrediente.Ativo">
+                        <label class="form-check-label">Ativo</label>
+                      </div>
+                </div>
+                <div class="col-12">
+                    <div class="btn-group h-item-btn w100">
+                        <button type="button" class="btn btn-info" (click)="Marcas()">Marcas</button>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="btn-group h-item-btn w100">
+                        <button type="button" class="btn btn-info" (click)="Fornecedores()">Fornecedores</button>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="btn-group h-item-btn">
+                        <button type="button" class="btn btn-danger" (click)="Excluir()">Excluir</button>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="btn-group h-item-btn btn-right">
+                        <button type="button" class="btn btn-primary" (click)="Novo()" >Novo</button>
+                        <button type="button" class="btn btn-success" (click)="Salvar()">Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

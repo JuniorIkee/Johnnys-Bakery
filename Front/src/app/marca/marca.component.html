@@ -1,0 +1,83 @@
+
+<div class="titulo">
+    <img src="../../../assets/img/ingredient.png" alt="">
+    <h3>Marcas</h3>
+</div>
+
+<div class="card-row">
+    <div class="card resumo">
+        <div class="titulo-resumo">
+            <span class="titulo-resumo-valor">10</span>
+            <span>Cadastrados</span>
+        </div>
+    </div>
+
+    <div class="card resumo">
+        <div class="titulo-resumo">
+            <span class="titulo-resumo-valor">10</span>
+            <span>Em estoque</span>
+        </div>
+    </div>
+
+    <div class="card resumo">
+        <div class="titulo-resumo">
+            <span class="titulo-resumo-valor">10</span>
+            <span>Dias até o vencimento</span>
+        </div>
+    </div>
+</div>
+<div class="card-row">
+    <div class="card">
+        <div class="row pesquisa">
+            <div class="col-12 barra-pesquisa">
+                <input type="email" class="form-control form-control-sm espacamento-pesquisa" id="busca" placeholder="Nome..." [(ngModel)]="filtroNome">
+                <button type="button" class="btn btn-primary espacamento-pesquisa" (click)="Novo()">Novo</button>
+                <button type="button" class="btn btn-success" (click)="Listar()">Buscar</button>
+            </div>
+        </div>
+        <div class="row tabela-listagem">
+            <table>
+                <thead>
+                    <th style="width: 90%;">Nome</th>
+                    <th></th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of listaMarcas">
+                        <td>{{item.Nome}}</td>
+                        <td><button class="btn btn-sm btn-light" (click)="Carregar(item.IdEnc)">Detalhe</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Modals -->
+<div class="modal fade" id="marca" tabindex="-1" aria-labelledby="Marca" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Marca</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="row">
+                    <div class="mb-12">
+                        <label class="form-label">Nome:</label>
+                        <input type="text" class="form-control form-control-sm" name="nome" [(ngModel)]="marca.Nome">
+                    </div>
+                    <!-- <div class="mb-12">
+                        <label for="message-text" class="form-label">Endereço:</label>
+                        <input type="text" class="form-control form-control-sm" name="endereco" [(ngModel)]="">
+                    </div> -->
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            <button type="button" class="btn btn-primary" (click)="Salvar()">Gravar</button>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,105 @@
+body{
+    font-family: cursive;
+    margin: 0;
+}
+
+.card-row{
+    display: flex;
+
+}
+
+.card{
+    box-shadow: 0px 0px 5px 1px rgb(255 218 185 / 50%);
+    background-color: white;
+    padding: 10px 20px 10px 20px;
+    margin: 1%;
+    width: 100%;
+}
+
+.titulo{
+    display: flex;
+    align-items: center;
+    margin-bottom: 43px;
+}
+
+.titulo img{
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.resumo{
+    height: 88px;
+}
+
+.titulo-resumo{
+    position: relative;
+}
+
+.titulo-resumo-valor{
+    font-size: 63px;
+    margin-right: 8px;
+}
+
+.pesquisa{
+    margin-bottom: 10px;
+}
+
+.tabela-listagem{
+    margin-top: 12px;
+    padding-left: 23px;
+    padding-right: 6px;
+}
+
+table{
+    width: 100%;
+}
+
+.h-item{
+    margin-bottom: 10px;
+}
+
+.h-item-check{
+    margin-top: 30px
+}
+
+.h-item-btn{
+    margin-top: 20px;
+}
+
+.btn-right{
+    float: right;
+}
+
+.espacamento-pesquisa{
+    margin-right: 5px;
+}
+
+.titulo-cadastro{
+    display: flex;
+    justify-content: space-between;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+  
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(159, 156, 156);
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.w100{
+    width: 100%;
+}
+
+.barra-pesquisa{
+    display: flex;
+}
